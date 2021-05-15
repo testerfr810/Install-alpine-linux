@@ -1,0 +1,54 @@
+
+
+###### !__INSTALL ALPINE_LINUX_XFCE4__! ######
+
+https://alpinelinux.org/downloads/
+
+localhost login: root
+
+setup-alpine
+
+language:
+fr
+fr
+
+hostname:
+alpine2021
+
+follow instructions which you want.
+select your drive "sda" or "vda" for virtual machine ect...
+
+Once finished REBOOT
+
+
+whoami
+uname -a
+
+### INSTALL PACKAGE ###
+
+apk add nano vim sudo
+
+vim /etc/apk/repositories
+
+"Uncoment main & communauty save & exit"
+
+apk update
+
+### INSTALL XFCE ###
+
+setup-xorg-base xfce4 xfce4-terminal dbus-x11 thunar-volman
+rc-service dbus start
+rc-update add dbus
+rc-service udev start
+rc-update add udev
+
+apk add lightdm lightdm-gtk-greeter
+rc-update add lightdm
+
+apk add polkit consolekit2
+apk add firefox leafpad filezilla faenza-icon-theme
+
+reboot
+
+IS DONE !!
+
